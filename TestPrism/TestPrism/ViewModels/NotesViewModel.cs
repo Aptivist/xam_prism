@@ -4,13 +4,14 @@ using System.Windows.Input;
 using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Navigation;
+using TestPrism.Interfaces;
 
 namespace TestPrism.ViewModels
 {
     public class NotesViewModel : BindableBase, INavigationAware
     {
         private readonly INavigationService _navigationService;
-
+        private readonly IPhoneDialer _phoneDialer;
         private string _title;
         public string Title
         {
@@ -31,13 +32,22 @@ namespace TestPrism.ViewModels
             get => _backValue;
             set => SetProperty(ref _backValue, value);
         }
+        public DelegateCommand CallCommand { get; private set; }
 
         public DelegateCommand NextCommand { get; private set; }
-
-        public NotesViewModel(INavigationService navigationService)
+        
+        public NotesViewModel(INavigationService navigationService,
+            IPhoneDialer phoneDialer)
         {
+            _phoneDialer = phoneDialer;
             _navigationService = navigationService;
             NextCommand = new DelegateCommand(OnNextCommand);
+            CallCommand = new DelegateCommand(OnCallCommand);
+        }
+
+        private void OnCallCommand()
+        {
+            _phoneDialer.Call(MyText);
         }
 
         private void OnNextCommand()
@@ -50,7 +60,7 @@ namespace TestPrism.ViewModels
 
         public void OnNavigatedFrom(INavigationParameters parameters)
         {
-            //throw new NotImplementedException();
+            Console.WriteLine("OnNavigatedFrom");
         }
 
         public void OnNavigatedTo(INavigationParameters parameters)

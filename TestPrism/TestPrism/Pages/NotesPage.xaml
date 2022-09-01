@@ -5,11 +5,12 @@
     x:Class="TestPrism.Pages.NotesPage">
     <ContentPage.Content>
        <StackLayout>
-          <Label Text="Using Prims" />
+            <Label Text="Using Prims" />
             <Entry Placeholder="Here" Text="{Binding MyText}" />
             <Label Text="Parameters from back" />
             <Label Text="{Binding BackValue}" />
             <Button Text="Next" Command="{Binding NextCommand}" />
+            <Button Text="Call" Command="{Binding CallCommand}" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

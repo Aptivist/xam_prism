@@ -34,6 +34,8 @@ namespace TestPrism.ViewModels
 
         public void OnNavigatedFrom(INavigationParameters parameters)
         {
+            Console.WriteLine("OnNavigatedFrom - NoteDetailViewModel");
+
         }
 
         public void OnNavigatedTo(INavigationParameters parameters)

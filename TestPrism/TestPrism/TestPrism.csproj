@@ -23,9 +23,11 @@
     <None Remove="Prism.DryIoc.Forms" />
     <None Remove="Pages\" />
     <None Remove="ViewModels\" />
+    <None Remove="Interfaces\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Pages\" />
     <Folder Include="ViewModels\" />
+    <Folder Include="Interfaces\" />
   </ItemGroup>
 </Project>
