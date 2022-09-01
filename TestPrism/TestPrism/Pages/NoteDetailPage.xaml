@@ -6,7 +6,7 @@
     <StackLayout>
         <Label Text="Second view" />
         <Label Text="{Binding EntryValue}" />
-
+        <Button Text="Back" Command="{Binding BackCommad}" />
     </StackLayout>
 </ContentPage>
 

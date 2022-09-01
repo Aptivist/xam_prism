@@ -7,7 +7,9 @@
        <StackLayout>
           <Label Text="Using Prims" />
             <Entry Placeholder="Here" Text="{Binding MyText}" />
-          <Button Text="Next" Command="{Binding NextCommand}" />
+            <Label Text="Parameters from back" />
+            <Label Text="{Binding BackValue}" />
+            <Button Text="Next" Command="{Binding NextCommand}" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
