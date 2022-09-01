@@ -42,7 +42,17 @@ namespace TestPrism.ViewModels
             _phoneDialer = phoneDialer;
             _navigationService = navigationService;
             NextCommand = new DelegateCommand(OnNextCommand);
-            CallCommand = new DelegateCommand(OnCallCommand);
+            CallCommand = new DelegateCommand(OnCallCommand, () =>
+            {
+                if (string.IsNullOrEmpty(MyText))
+                {
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
+            }).ObservesProperty(() => MyText);
         }
 
         private void OnCallCommand()
