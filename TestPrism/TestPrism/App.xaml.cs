@@ -30,6 +30,7 @@ namespace TestPrism
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
+            containerRegistry.RegisterForNavigation<NavigationPage>();
             containerRegistry.RegisterForNavigation<NoteDetailPage, NoteDetailViewModel>("second");
             containerRegistry.RegisterForNavigation<NotesPage, NotesViewModel>(nameof(NotesViewModel));
         }
@@ -37,7 +38,7 @@ namespace TestPrism
         protected override void OnInitialized()
         {
             InitializeComponent();
-            NavigationService.NavigateAsync(nameof(NotesViewModel));
+            NavigationService.NavigateAsync($"NavigationPage/{nameof(NotesViewModel)}");
         }
     }
 }

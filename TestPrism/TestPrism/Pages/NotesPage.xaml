@@ -5,9 +5,9 @@
     x:Class="TestPrism.Pages.NotesPage">
     <ContentPage.Content>
        <StackLayout>
-             <Label VerticalOptions="CenterAndExpand" Text="Using Prims" />
-        <Button Text="Next" Command="{Binding NextCommand}" />
-
+          <Label Text="Using Prims" />
+            <Entry Placeholder="Here" Text="{Binding MyText}" />
+          <Button Text="Next" Command="{Binding NextCommand}" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
